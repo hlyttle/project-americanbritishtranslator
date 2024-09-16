@@ -11,6 +11,12 @@ module.exports = function (app) {
       originalSentence,
       req.body.locale
     );
+    if (originalSentence === translatedSentence) {
+      res.json({
+        text: originalSentence,
+        translation: "Everything looks good to me!",
+      });
+    }
     res.json({ text: originalSentence, translation: translatedSentence });
   });
 };

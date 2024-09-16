@@ -47,7 +47,7 @@ suite("Functional Tests", () => {
           done();
         });
     });
-    test.skip("Text that needs no translation", (done) => {
+    test("Text that needs no translation", (done) => {
       chai
         .request(server)
         .keepOpen()
