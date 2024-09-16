@@ -25,11 +25,9 @@ class Translator {
     } else {
       return "Invalid value for locale field";
     }
-    const phraseStart = "(^| )";
-    const phraseEnd = "([ .,!?):;-])";
     for (const word of Object.keys(objectToCheck)) {
       let lowerSentence = translatedSentence.toLowerCase();
-      let pattern = new RegExp(phraseStart + word + phraseEnd);
+      let pattern = new RegExp("(?<![\\w-])" + word + "(?![\\w-])", "gi");
       if (lowerSentence.match(pattern)) {
         let startPoint = lowerSentence.indexOf(word);
         let endPoint = startPoint + word.length;
@@ -43,9 +41,12 @@ class Translator {
     }
     for (const word of Object.keys(titlesObject)) {
       let lowerSentence = translatedSentence.toLowerCase();
-      let pattern = new RegExp(phraseStart + word + phraseEnd);
+      let pattern =
+        desiredLanguage === "British"
+          ? new RegExp("(?<![\\w-])" + word.slice(0, -1) + "(?![\\w-])", "gi")
+          : new RegExp("(?<![\\w-])" + word + "(?![\\w-])", "gi");
       if (lowerSentence.match(pattern)) {
-        let startPoint = lowerSentence.indexOf(word);
+        let startPoint = lowerSentence.indexOf(lowerSentence.match(pattern)[0]);
         let endPoint = startPoint + word.length;
         translatedSentence =
           translatedSentence.slice(0, startPoint) +
