@@ -134,7 +134,7 @@ suite("Unit Tests", () => {
         "footie"
       );
     });
-    test.skip("Paracetamol", () => {
+    test("Paracetamol", () => {
       assert.include(
         translator.translate(
           "Paracetamol takes up to an hour to work.",
@@ -150,7 +150,7 @@ suite("Unit Tests", () => {
         "Paracetamol"
       );
     });
-    test.skip("caramelise", () => {
+    test("caramelise", () => {
       assert.include(
         translator.translate("First, caramelise the onions.", "American"),
         "caramelize"
@@ -160,7 +160,7 @@ suite("Unit Tests", () => {
         "caramelise"
       );
     });
-    test.skip("bank holiday, funfair", () => {
+    test("bank holiday, funfair", () => {
       assert.include(
         translator.translate(
           "I spent the bank holiday at the funfair.",
@@ -190,7 +190,7 @@ suite("Unit Tests", () => {
         "funfair"
       );
     });
-    test.skip("bicky, chippy", () => {
+    test("bicky, chippy", () => {
       assert.include(
         translator.translate(
           "I had a bicky then went to the chippy.",
@@ -220,7 +220,7 @@ suite("Unit Tests", () => {
         "chippy"
       );
     });
-    test.skip("bits and bobs, bum bag", () => {
+    test("bits and bobs, bum bag", () => {
       assert.include(
         translator.translate(
           "I've just got bits and bobs in my bum bag.",
@@ -250,7 +250,7 @@ suite("Unit Tests", () => {
         "bum bag"
       );
     });
-    test.skip("car boot sale", () => {
+    test("car boot sale", () => {
       assert.include(
         translator.translate(
           "The car boot sale at Boxted Airfield was called off.",

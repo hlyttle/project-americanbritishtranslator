@@ -5,7 +5,6 @@ const britishOnly = require("./british-only.js");
 
 class Translator {
   translate(sentence, desiredLanguage) {
-    let lowerSentence = sentence.toLowerCase();
     let translatedSentence = sentence;
     let objectToCheck = {};
     if (desiredLanguage === "British") {
@@ -21,12 +20,13 @@ class Translator {
     } else {
       return "Please select a valid language option";
     }
-    console.log(Object.keys(objectToCheck)[2]);
     const phraseStart = "(^| )";
     const phraseEnd = "([ .,!?):;-])";
     for (const word of Object.keys(objectToCheck)) {
+      let lowerSentence = translatedSentence.toLowerCase();
       let pattern = new RegExp(phraseStart + word + phraseEnd);
       if (lowerSentence.match(pattern)) {
+        console.log(word);
         let startPoint = lowerSentence.indexOf(word);
         let endPoint = startPoint + word.length;
         translatedSentence =
@@ -36,6 +36,7 @@ class Translator {
       }
     }
     for (const word of Object.keys(americanToBritishTitles)) {
+      let lowerSentence = translatedSentence.toLowerCase();
       let pattern = new RegExp(phraseStart + word + phraseEnd);
       if (lowerSentence.match(pattern)) {
         let startPoint = lowerSentence.indexOf(word);
