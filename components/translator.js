@@ -23,7 +23,7 @@ class Translator {
         titlesObject[americanToBritishTitles[key]] = key;
       }
     } else {
-      return "Please select a valid language option";
+      return "Invalid value for locale field";
     }
     const phraseStart = "(^| )";
     const phraseEnd = "([ .,!?):;-])";

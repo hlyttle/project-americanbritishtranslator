@@ -5,7 +5,9 @@ const Translator = require("../components/translator.js");
 module.exports = function (app) {
   const translator = new Translator();
 
-  app.route("/api/translate").post((req, res) => {});
+  app.route("/api/translate").post((req, res) => {
+    console.log(req);
+  });
 };
 
 // You can POST to /api/translate with a body containing text with the text to translate and locale with either american-to-british or british-to-american. The returned object should contain the submitted text and translation with the translated text.
