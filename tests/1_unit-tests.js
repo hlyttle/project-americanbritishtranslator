@@ -16,7 +16,7 @@ suite("Unit Tests", () => {
         "favorite"
       );
     });
-    test.skip("yogurt", () => {
+    test("yogurt", () => {
       assert.include(
         translator.translate("I ate yogurt for breakfast.", "British"),
         "yoghurt"
@@ -26,7 +26,7 @@ suite("Unit Tests", () => {
         "yogurt"
       );
     });
-    test.skip("condo", () => {
+    test("condo", () => {
       assert.include(
         translator.translate("We had a party at my friend's condo.", "British"),
         "flat"

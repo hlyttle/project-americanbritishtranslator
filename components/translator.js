@@ -5,18 +5,24 @@ const britishOnly = require("./british-only.js");
 
 class Translator {
   translate(sentence, desiredLanguage) {
-    let splitSentence = sentence.split(" ");
+    let finalChar = sentence[sentence.length - 1];
+    let trimmedSentence = sentence.slice(0, -1);
+    let splitSentence = trimmedSentence.split(" ");
     let newArray = splitSentence.map((word) => {
       if (Object.keys(americanToBritishSpelling).includes(word)) {
         return americanToBritishSpelling[word];
+      } else if (Object.keys(americanOnly).includes(word)) {
+        return americanOnly[word];
       } else {
         return word;
       }
     });
     console.log(newArray);
-    return newArray.join(" ");
+    return newArray.join(" ") + finalChar;
   }
 }
+// current problem - if the word is followed by a punctuation mark it is included when it is split
+// start by removing this and saving to a variable, replace at end
 
 //take a string and an desired language
 //split the string by spaces ** THIS WON'T WORK as some are phrases, not words
