@@ -9,7 +9,7 @@ module.exports = function (app) {
     const originalSentence = req.body.text;
     const translatedSentence = translator.translate(
       originalSentence,
-      "american-to-british"
+      req.body.locale
     );
     res.json({ text: originalSentence, translation: translatedSentence });
   });
