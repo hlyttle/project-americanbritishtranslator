@@ -3,7 +3,20 @@ const americanToBritishSpelling = require("./american-to-british-spelling.js");
 const americanToBritishTitles = require("./american-to-british-titles.js");
 const britishOnly = require("./british-only.js");
 
-class Translator {}
+class Translator {
+  translate(sentence, desiredLanguage) {
+    let splitSentence = sentence.split(" ");
+    let newArray = splitSentence.map((word) => {
+      if (Object.keys(americanToBritishSpelling).includes(word)) {
+        return americanToBritishSpelling[word];
+      } else {
+        return word;
+      }
+    });
+    console.log(newArray);
+    return newArray.join(" ");
+  }
+}
 
 //take a string and an desired language
 //split the string by spaces ** THIS WON'T WORK as some are phrases, not words
