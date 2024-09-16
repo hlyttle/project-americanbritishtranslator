@@ -266,13 +266,13 @@ suite("Unit Tests", () => {
         "car boot sale"
       );
     });
-    test.skip("Mrs", () => {
+    test("Mrs", () => {
       assert.include(
         translator.translate("Have you met Mrs Kalyani?", "American"),
         "Mrs."
       );
     });
-    test.skip("Prof", () => {
+    test("Prof", () => {
       assert.include(
         translator.translate(
           "Prof Joyner of King's College, London.",

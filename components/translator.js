@@ -7,15 +7,20 @@ class Translator {
   translate(sentence, desiredLanguage) {
     let translatedSentence = sentence;
     let objectToCheck = {};
+    let titlesObject = {};
     if (desiredLanguage === "British") {
       objectToCheck = {
         ...americanToBritishSpelling,
         ...americanOnly,
       };
+      titlesObject = { ...americanToBritishTitles };
     } else if (desiredLanguage === "American") {
       objectToCheck = { ...britishOnly };
       for (const key of Object.keys(americanToBritishSpelling)) {
         objectToCheck[americanToBritishSpelling[key]] = key;
+      }
+      for (const key of Object.keys(americanToBritishTitles)) {
+        titlesObject[americanToBritishTitles[key]] = key;
       }
     } else {
       return "Please select a valid language option";
@@ -35,7 +40,7 @@ class Translator {
           translatedSentence.slice(endPoint);
       }
     }
-    for (const word of Object.keys(americanToBritishTitles)) {
+    for (const word of Object.keys(titlesObject)) {
       let lowerSentence = translatedSentence.toLowerCase();
       let pattern = new RegExp(phraseStart + word + phraseEnd);
       if (lowerSentence.match(pattern)) {
@@ -43,8 +48,8 @@ class Translator {
         let endPoint = startPoint + word.length;
         translatedSentence =
           translatedSentence.slice(0, startPoint) +
-          americanToBritishTitles[word][0].toUpperCase() +
-          americanToBritishTitles[word].slice(1) +
+          titlesObject[word][0].toUpperCase() +
+          titlesObject[word].slice(1) +
           translatedSentence.slice(endPoint);
       }
     }
