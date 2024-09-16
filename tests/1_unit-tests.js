@@ -62,7 +62,7 @@ suite("Unit Tests", () => {
         "parking lot"
       );
     });
-    test.skip("Rube Goldberg machine", () => {
+    test("Rube Goldberg machine", () => {
       assert.include(
         translator.translate(
           "Like a high tech Rube Goldberg machine.",
