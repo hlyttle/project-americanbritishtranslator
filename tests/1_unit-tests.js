@@ -106,7 +106,7 @@ suite("Unit Tests", () => {
         "Dr."
       );
     });
-    test.skip("digital times", () => {
+    test("digital times", () => {
       assert.include(
         translator.translate("Lunch is at 12:15 today.", "British"),
         "12.15"
