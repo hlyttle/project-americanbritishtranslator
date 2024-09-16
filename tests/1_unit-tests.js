@@ -78,7 +78,7 @@ suite("Unit Tests", () => {
         "Rube Goldberg machine"
       );
     });
-    test.skip("play hooky", () => {
+    test("play hooky", () => {
       assert.include(
         translator.translate(
           "To play hooky means to skip class or work.",
@@ -94,13 +94,13 @@ suite("Unit Tests", () => {
         "play hooky"
       );
     });
-    test.skip("Mr.", () => {
+    test("Mr.", () => {
       assert.notInclude(
         translator.translate("No Mr. Bond, I expect you to die.", "British"),
         "Mr."
       );
     });
-    test.skip("Dr.", () => {
+    test("Dr.", () => {
       assert.notInclude(
         translator.translate("Dr. Grosh will see you now.", "British"),
         "Dr."
