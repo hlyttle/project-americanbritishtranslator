@@ -31,12 +31,13 @@ class Translator {
       let lowerSentence = translatedSentence.toLowerCase();
       let pattern = new RegExp(phraseStart + word + phraseEnd);
       if (lowerSentence.match(pattern)) {
-        console.log(word);
         let startPoint = lowerSentence.indexOf(word);
         let endPoint = startPoint + word.length;
         translatedSentence =
           translatedSentence.slice(0, startPoint) +
+          "<span class='highlight'>" +
           objectToCheck[word] +
+          "</span>" +
           translatedSentence.slice(endPoint);
       }
     }
@@ -48,8 +49,10 @@ class Translator {
         let endPoint = startPoint + word.length;
         translatedSentence =
           translatedSentence.slice(0, startPoint) +
+          "<span class='highlight'>" +
           titlesObject[word][0].toUpperCase() +
           titlesObject[word].slice(1) +
+          "</span>" +
           translatedSentence.slice(endPoint);
       }
     }
@@ -63,14 +66,13 @@ class Translator {
         desiredLanguage === "British"
           ? timeToChange[0].replace(":", ".")
           : timeToChange[0].replace(".", ":");
-      translatedSentence = translatedSentence.replace(timeToChange[0], newTime);
+      translatedSentence = translatedSentence.replace(
+        timeToChange[0],
+        "<span class='highlight'>" + newTime + "</span>"
+      );
     }
-
-    console.log(translatedSentence);
     return translatedSentence;
   }
 }
-
-//puts highlight span around any changed words
 
 module.exports = Translator;

@@ -281,7 +281,7 @@ suite("Unit Tests", () => {
         "Prof."
       );
     });
-    test.skip("digital times", () => {
+    test("digital times", () => {
       assert.include(
         translator.translate(
           "Tea time is usually around 4 or 4.30.",
@@ -298,7 +298,7 @@ suite("Unit Tests", () => {
       );
     });
   });
-  suite.skip("Verifying highlights", () => {
+  suite("Verifying highlights", () => {
     test("favorite", () => {
       assert.equal(
         translator.translate("Mangoes are my favorite fruit.", "British"),
