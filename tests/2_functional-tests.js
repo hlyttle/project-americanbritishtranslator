@@ -28,7 +28,7 @@ suite("Functional Tests", () => {
           done();
         });
     });
-    test.skip("Translation from British to American", (done) => {
+    test("Translation from British to American", (done) => {
       chai
         .request(server)
         .keepOpen()

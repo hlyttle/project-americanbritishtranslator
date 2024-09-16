@@ -8,13 +8,13 @@ class Translator {
     let translatedSentence = sentence;
     let objectToCheck = {};
     let titlesObject = {};
-    if (desiredLanguage === "British") {
+    if (desiredLanguage === "american-to-british") {
       objectToCheck = {
         ...americanToBritishSpelling,
         ...americanOnly,
       };
       titlesObject = { ...americanToBritishTitles };
-    } else if (desiredLanguage === "American") {
+    } else if (desiredLanguage === "british-to-american") {
       objectToCheck = { ...britishOnly };
       for (const key of Object.keys(americanToBritishSpelling)) {
         objectToCheck[americanToBritishSpelling[key]] = key;
@@ -42,7 +42,7 @@ class Translator {
     for (const word of Object.keys(titlesObject)) {
       let lowerSentence = translatedSentence.toLowerCase();
       let pattern =
-        desiredLanguage === "British"
+        desiredLanguage === "american-to-british"
           ? new RegExp("(?<![\\w-])" + word.slice(0, -1) + "(?![\\w-])", "gi")
           : new RegExp("(?<![\\w-])" + word + "(?![\\w-])", "gi");
       if (lowerSentence.match(pattern)) {
@@ -58,13 +58,13 @@ class Translator {
       }
     }
     const timePattern =
-      desiredLanguage === "British"
+      desiredLanguage === "american-to-british"
         ? /[0-2]?[0-9]:[0-5][0-9]/
         : /[0-2]?[0-9].[0-5][0-9]/;
     let timeToChange = translatedSentence.match(timePattern);
     if (timeToChange) {
       let newTime =
-        desiredLanguage === "British"
+        desiredLanguage === "american-to-british"
           ? timeToChange[0].replace(":", ".")
           : timeToChange[0].replace(".", ":");
       translatedSentence = translatedSentence.replace(

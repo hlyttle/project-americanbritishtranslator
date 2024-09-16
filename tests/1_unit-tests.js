@@ -8,31 +8,49 @@ suite("Unit Tests", () => {
   suite("Translating to British English", () => {
     test("favorite", () => {
       assert.include(
-        translator.translate("Mangoes are my favorite fruit.", "British"),
+        translator.translate(
+          "Mangoes are my favorite fruit.",
+          "american-to-british"
+        ),
         "favourite"
       );
       assert.notInclude(
-        translator.translate("Mangoes are my favorite fruit.", "British"),
+        translator.translate(
+          "Mangoes are my favorite fruit.",
+          "american-to-british"
+        ),
         "favorite"
       );
     });
     test("yogurt", () => {
       assert.include(
-        translator.translate("I ate yogurt for breakfast.", "British"),
+        translator.translate(
+          "I ate yogurt for breakfast.",
+          "american-to-british"
+        ),
         "yoghurt"
       );
       assert.notInclude(
-        translator.translate("I ate yogurt for breakfast.", "British"),
+        translator.translate(
+          "I ate yogurt for breakfast.",
+          "american-to-british"
+        ),
         "yogurt"
       );
     });
     test("condo", () => {
       assert.include(
-        translator.translate("We had a party at my friend's condo.", "British"),
+        translator.translate(
+          "We had a party at my friend's condo.",
+          "american-to-british"
+        ),
         "flat"
       );
       assert.notInclude(
-        translator.translate("We had a party at my friend's condo.", "British"),
+        translator.translate(
+          "We had a party at my friend's condo.",
+          "american-to-british"
+        ),
         "condo"
       );
     });
@@ -40,25 +58,31 @@ suite("Unit Tests", () => {
       assert.include(
         translator.translate(
           "Can you toss this in the trashcan for me?",
-          "British"
+          "american-to-british"
         ),
         "bin"
       );
       assert.notInclude(
         translator.translate(
           "Can you toss this in the trashcan for me?",
-          "British"
+          "american-to-british"
         ),
         "trashcan"
       );
     });
     test("parking lot", () => {
       assert.include(
-        translator.translate("The parking lot was full.", "British"),
+        translator.translate(
+          "The parking lot was full.",
+          "american-to-british"
+        ),
         "car park"
       );
       assert.notInclude(
-        translator.translate("The parking lot was full.", "British"),
+        translator.translate(
+          "The parking lot was full.",
+          "american-to-british"
+        ),
         "parking lot"
       );
     });
@@ -66,14 +90,14 @@ suite("Unit Tests", () => {
       assert.include(
         translator.translate(
           "Like a high tech Rube Goldberg machine.",
-          "British"
+          "american-to-british"
         ),
         "Heath Robinson device"
       );
       assert.notInclude(
         translator.translate(
           "Like a high tech Rube Goldberg machine.",
-          "British"
+          "american-to-british"
         ),
         "Rube Goldberg machine"
       );
@@ -82,37 +106,43 @@ suite("Unit Tests", () => {
       assert.include(
         translator.translate(
           "To play hooky means to skip class or work.",
-          "British"
+          "american-to-british"
         ),
         "bunk off"
       );
       assert.notInclude(
         translator.translate(
           "To play hooky means to skip class or work.",
-          "British"
+          "american-to-british"
         ),
         "play hooky"
       );
     });
     test("Mr.", () => {
       assert.notInclude(
-        translator.translate("No Mr. Bond, I expect you to die.", "British"),
+        translator.translate(
+          "No Mr. Bond, I expect you to die.",
+          "american-to-british"
+        ),
         "Mr."
       );
     });
     test("Dr.", () => {
       assert.notInclude(
-        translator.translate("Dr. Grosh will see you now.", "British"),
+        translator.translate(
+          "Dr. Grosh will see you now.",
+          "american-to-british"
+        ),
         "Dr."
       );
     });
     test("digital times", () => {
       assert.include(
-        translator.translate("Lunch is at 12:15 today.", "British"),
+        translator.translate("Lunch is at 12:15 today.", "american-to-british"),
         "12.15"
       );
       assert.notInclude(
-        translator.translate("Lunch is at 12:15 today.", "British"),
+        translator.translate("Lunch is at 12:15 today.", "american-to-british"),
         "12:15"
       );
     });
@@ -122,14 +152,14 @@ suite("Unit Tests", () => {
       assert.include(
         translator.translate(
           "We watched the footie match for a while.",
-          "American"
+          "british-to-american"
         ),
         "soccer"
       );
       assert.notInclude(
         translator.translate(
           "We watched the footie match for a while.",
-          "American"
+          "british-to-american"
         ),
         "footie"
       );
@@ -138,25 +168,31 @@ suite("Unit Tests", () => {
       assert.include(
         translator.translate(
           "Paracetamol takes up to an hour to work.",
-          "American"
+          "british-to-american"
         ),
         "Tylenol"
       );
       assert.notInclude(
         translator.translate(
           "Paracetamol takes up to an hour to work.",
-          "American"
+          "british-to-american"
         ),
         "Paracetamol"
       );
     });
     test("caramelise", () => {
       assert.include(
-        translator.translate("First, caramelise the onions.", "American"),
+        translator.translate(
+          "First, caramelise the onions.",
+          "british-to-american"
+        ),
         "caramelize"
       );
       assert.notInclude(
-        translator.translate("First, caramelise the onions.", "American"),
+        translator.translate(
+          "First, caramelise the onions.",
+          "british-to-american"
+        ),
         "caramelise"
       );
     });
@@ -164,28 +200,28 @@ suite("Unit Tests", () => {
       assert.include(
         translator.translate(
           "I spent the bank holiday at the funfair.",
-          "American"
+          "british-to-american"
         ),
         "public holiday"
       );
       assert.include(
         translator.translate(
           "I spent the bank holiday at the funfair.",
-          "American"
+          "british-to-american"
         ),
         "carnival"
       );
       assert.notInclude(
         translator.translate(
           "I spent the bank holiday at the funfair.",
-          "American"
+          "british-to-american"
         ),
         "bank holiday"
       );
       assert.notInclude(
         translator.translate(
           "I spent the bank holiday at the funfair.",
-          "American"
+          "british-to-american"
         ),
         "funfair"
       );
@@ -194,28 +230,28 @@ suite("Unit Tests", () => {
       assert.include(
         translator.translate(
           "I had a bicky then went to the chippy.",
-          "American"
+          "british-to-american"
         ),
         "cookie"
       );
       assert.include(
         translator.translate(
           "I had a bicky then went to the chippy.",
-          "American"
+          "british-to-american"
         ),
         "fish-and-chip shop"
       );
       assert.notInclude(
         translator.translate(
           "I had a bicky then went to the chippy.",
-          "American"
+          "british-to-american"
         ),
         "bicky"
       );
       assert.notInclude(
         translator.translate(
           "I had a bicky then went to the chippy.",
-          "American"
+          "british-to-american"
         ),
         "chippy"
       );
@@ -224,28 +260,28 @@ suite("Unit Tests", () => {
       assert.include(
         translator.translate(
           "I've just got bits and bobs in my bum bag.",
-          "American"
+          "british-to-american"
         ),
         "odds and ends"
       );
       assert.include(
         translator.translate(
           "I've just got bits and bobs in my bum bag.",
-          "American"
+          "british-to-american"
         ),
         "fanny pack"
       );
       assert.notInclude(
         translator.translate(
           "I've just got bits and bobs in my bum bag.",
-          "American"
+          "british-to-american"
         ),
         "bits and bobs"
       );
       assert.notInclude(
         translator.translate(
           "I've just got bits and bobs in my bum bag.",
-          "American"
+          "british-to-american"
         ),
         "bum bag"
       );
@@ -254,21 +290,24 @@ suite("Unit Tests", () => {
       assert.include(
         translator.translate(
           "The car boot sale at Boxted Airfield was called off.",
-          "American"
+          "british-to-american"
         ),
         "swap meet"
       );
       assert.notInclude(
         translator.translate(
           "The car boot sale at Boxted Airfield was called off.",
-          "American"
+          "british-to-american"
         ),
         "car boot sale"
       );
     });
     test("Mrs", () => {
       assert.include(
-        translator.translate("Have you met Mrs Kalyani?", "American"),
+        translator.translate(
+          "Have you met Mrs Kalyani?",
+          "british-to-american"
+        ),
         "Mrs."
       );
     });
@@ -276,7 +315,7 @@ suite("Unit Tests", () => {
       assert.include(
         translator.translate(
           "Prof Joyner of King's College, London.",
-          "American"
+          "british-to-american"
         ),
         "Prof."
       );
@@ -285,14 +324,14 @@ suite("Unit Tests", () => {
       assert.include(
         translator.translate(
           "Tea time is usually around 4 or 4.30.",
-          "American"
+          "british-to-american"
         ),
         "4:30"
       );
       assert.notInclude(
         translator.translate(
           "Tea time is usually around 4 or 4.30.",
-          "American"
+          "british-to-american"
         ),
         "4.30"
       );
@@ -301,13 +340,19 @@ suite("Unit Tests", () => {
   suite("Verifying highlights", () => {
     test("favorite", () => {
       assert.equal(
-        translator.translate("Mangoes are my favorite fruit.", "British"),
+        translator.translate(
+          "Mangoes are my favorite fruit.",
+          "american-to-british"
+        ),
         "Mangoes are my <span class='highlight'>favourite</span> fruit."
       );
     });
     test("yogurt", () => {
       assert.equal(
-        translator.translate("I ate yogurt for breakfast.", "British"),
+        translator.translate(
+          "I ate yogurt for breakfast.",
+          "american-to-british"
+        ),
         "I ate <span class='highlight'>yoghurt</span> for breakfast."
       );
     });
@@ -315,7 +360,7 @@ suite("Unit Tests", () => {
       assert.equal(
         translator.translate(
           "We watched the footie match for a while.",
-          "American"
+          "british-to-american"
         ),
         "We watched the <span class='highlight'>soccer</span> match for a while."
       );
@@ -324,7 +369,7 @@ suite("Unit Tests", () => {
       assert.equal(
         translator.translate(
           "Paracetamol takes up to an hour to work.",
-          "American"
+          "british-to-american"
         ),
         "<span class='highlight'>Tylenol</span> takes up to an hour to work."
       );
