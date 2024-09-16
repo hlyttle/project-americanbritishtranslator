@@ -64,12 +64,12 @@ suite("Functional Tests", () => {
     });
   });
   suite("Invalid POST requests to /api/translate", () => {
-    test.skip("Invalid locale field", (done) => {
+    test("Invalid locale field", (done) => {
       chai
         .request(server)
         .keepOpen()
         .post("/api/translate")
-        .send({ text: "", locale: "british-to-french" })
+        .send({ text: "Translate this please!", locale: "british-to-french" })
         .end(function (err, res) {
           assert.equal(res.status, 200);
           assert.deepEqual(res.body, {
@@ -78,7 +78,7 @@ suite("Functional Tests", () => {
           done();
         });
     });
-    test.skip("Missing text field", (done) => {
+    test("Missing text field", (done) => {
       chai
         .request(server)
         .keepOpen()
@@ -90,7 +90,7 @@ suite("Functional Tests", () => {
           done();
         });
     });
-    test.skip("Missing locale field", (done) => {
+    test("Missing locale field", (done) => {
       chai
         .request(server)
         .keepOpen()
