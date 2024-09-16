@@ -6,7 +6,14 @@ module.exports = function (app) {
   const translator = new Translator();
 
   app.route("/api/translate").post((req, res) => {
-    if (!req.body.text || !req.body.locale) {
+    if (req.body.text === "") {
+      res.json({ error: "No text to translate" });
+      return;
+    }
+    if (
+      !Object.keys(req.body).includes("text") ||
+      !Object.keys(req.body).includes("locale")
+    ) {
       res.json({ error: "Required field(s) missing" });
       return;
     }

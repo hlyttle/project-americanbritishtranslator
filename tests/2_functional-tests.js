@@ -83,7 +83,7 @@ suite("Functional Tests", () => {
         .request(server)
         .keepOpen()
         .post("/api/translate")
-        .send({ locale: "" })
+        .send({ locale: "british-to-american" })
         .end(function (err, res) {
           assert.equal(res.status, 200);
           assert.deepEqual(res.body, { error: "Required field(s) missing" });
@@ -95,14 +95,14 @@ suite("Functional Tests", () => {
         .request(server)
         .keepOpen()
         .post("/api/translate")
-        .send({ text: "" })
+        .send({ text: "Please translate my sentence" })
         .end(function (err, res) {
           assert.equal(res.status, 200);
           assert.deepEqual(res.body, { error: "Required field(s) missing" });
           done();
         });
     });
-    test.skip("Empty text", (done) => {
+    test("Empty text", (done) => {
       chai
         .request(server)
         .keepOpen()
