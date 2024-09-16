@@ -7,10 +7,21 @@ class Translator {
   translate(sentence, desiredLanguage) {
     let lowerSentence = sentence.toLowerCase();
     let translatedSentence = sentence;
-    let objectToCheck = {
-      ...americanToBritishSpelling,
-      ...americanOnly,
-    };
+    let objectToCheck = {};
+    if (desiredLanguage === "British") {
+      objectToCheck = {
+        ...americanToBritishSpelling,
+        ...americanOnly,
+      };
+    } else if (desiredLanguage === "American") {
+      objectToCheck = { ...britishOnly };
+      for (const key of Object.keys(americanToBritishSpelling)) {
+        objectToCheck[americanToBritishSpelling[key]] = key;
+      }
+    } else {
+      return "Please select a valid language option";
+    }
+    console.log(Object.keys(objectToCheck)[2]);
     const phraseStart = "(^| )";
     const phraseEnd = "([ .,!?):;-])";
     for (const word of Object.keys(objectToCheck)) {

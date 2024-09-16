@@ -118,7 +118,7 @@ suite("Unit Tests", () => {
     });
   });
   suite("Translating to American English", () => {
-    test.skip("footie", () => {
+    test("footie", () => {
       assert.include(
         translator.translate(
           "We watched the footie match for a while.",
