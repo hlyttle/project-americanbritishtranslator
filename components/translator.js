@@ -24,9 +24,24 @@ class Translator {
           translatedSentence.slice(endPoint);
       }
     }
+    for (const word of Object.keys(americanToBritishTitles)) {
+      let pattern = new RegExp(phraseStart + word + phraseEnd);
+      if (lowerSentence.match(pattern)) {
+        let startPoint = lowerSentence.indexOf(word);
+        let endPoint = startPoint + word.length;
+        translatedSentence =
+          translatedSentence.slice(0, startPoint) +
+          americanToBritishTitles[word][0].toUpperCase() +
+          americanToBritishTitles[word].slice(1) +
+          translatedSentence.slice(endPoint);
+      }
+    }
+    console.log(translatedSentence);
     return translatedSentence;
   }
 }
+
+//current issue - titles need to be returned with a capital letter
 
 //repeat with titles (keys or actual word as relevant)
 //a : between two numbers is turned to a ., or vice versa, and the whole number is wrapped
