@@ -53,10 +53,16 @@ class Translator {
           translatedSentence.slice(endPoint);
       }
     }
-    const timePattern = /[0-2]?[0-9]:[0-5][0-9]/;
+    const timePattern =
+      desiredLanguage === "British"
+        ? /[0-2]?[0-9]:[0-5][0-9]/
+        : /[0-2]?[0-9].[0-5][0-9]/;
     let timeToChange = translatedSentence.match(timePattern);
     if (timeToChange) {
-      let newTime = timeToChange[0].replace(":", ".");
+      let newTime =
+        desiredLanguage === "British"
+          ? timeToChange[0].replace(":", ".")
+          : timeToChange[0].replace(".", ":");
       translatedSentence = translatedSentence.replace(timeToChange[0], newTime);
     }
 
