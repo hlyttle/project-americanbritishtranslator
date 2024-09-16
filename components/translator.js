@@ -36,15 +36,18 @@ class Translator {
           translatedSentence.slice(endPoint);
       }
     }
+    const timePattern = /[0-2]?[0-9]:[0-5][0-9]/;
+    let timeToChange = translatedSentence.match(timePattern);
+    if (timeToChange) {
+      let newTime = timeToChange[0].replace(":", ".");
+      translatedSentence = translatedSentence.replace(timeToChange[0], newTime);
+    }
+
     console.log(translatedSentence);
     return translatedSentence;
   }
 }
 
-//current issue - titles need to be returned with a capital letter
-
-//repeat with titles (keys or actual word as relevant)
-//a : between two numbers is turned to a ., or vice versa, and the whole number is wrapped
 //puts highlight span around any changed words
 
 module.exports = Translator;
