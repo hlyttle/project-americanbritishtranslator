@@ -72,6 +72,14 @@ class Translator {
         "<span class='highlight'>" + newTime + "</span>"
       );
     }
+    if (translatedSentence[0] === "<") {
+      let bracketIndex = translatedSentence.indexOf(">");
+      return (
+        translatedSentence.slice(0, bracketIndex + 1) +
+        translatedSentence[bracketIndex + 1].toUpperCase() +
+        translatedSentence.slice(bracketIndex + 2)
+      );
+    }
     return translatedSentence;
   }
 }
