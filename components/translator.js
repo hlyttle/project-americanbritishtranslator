@@ -24,17 +24,11 @@ class Translator {
           translatedSentence.slice(endPoint);
       }
     }
-    console.log(
-      translatedSentence[0].toUpperCase() + translatedSentence.slice(1)
-    );
-    return translatedSentence[0].toUpperCase() + translatedSentence.slice(1);
+    return translatedSentence;
   }
 }
-// current problem - everything is staying lower case, like names and 'i'
-// search through lower case, find the start and end indices, then return string.slice to that index, plus new word, plus string.slice to end
 
 //repeat with titles (keys or actual word as relevant)
-//repeat with spelling (keys or actual word as relevant)
 //a : between two numbers is turned to a ., or vice versa, and the whole number is wrapped
 //puts highlight span around any changed words
 
