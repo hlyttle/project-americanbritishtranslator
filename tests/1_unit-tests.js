@@ -36,7 +36,7 @@ suite("Unit Tests", () => {
         "condo"
       );
     });
-    test.skip("trashcan", () => {
+    test("trashcan", () => {
       assert.include(
         translator.translate(
           "Can you toss this in the trashcan for me?",
@@ -52,7 +52,7 @@ suite("Unit Tests", () => {
         "trashcan"
       );
     });
-    test.skip("parking lot", () => {
+    test("parking lot", () => {
       assert.include(
         translator.translate("The parking lot was full.", "British"),
         "car park"
