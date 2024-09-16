@@ -5,7 +5,7 @@ const britishOnly = require("./british-only.js");
 
 class Translator {
   translate(sentence, desiredLanguage) {
-    let translatedSentence = sentence;
+    let translatedSentence = sentence.toLowerCase();
     for (const word of Object.keys(americanToBritishSpelling)) {
       if (translatedSentence.includes(word)) {
         translatedSentence = translatedSentence.replace(
@@ -25,9 +25,11 @@ class Translator {
         );
       }
     }
-    return translatedSentence;
+    return translatedSentence[0].toUpperCase() + translatedSentence.slice(1);
   }
 }
+//current problem - neds to search for lower case versions
+//take lower case sentence, but re-capitalise first letter before return
 
 //repeat with titles (keys or actual word as relevant)
 //repeat with spelling (keys or actual word as relevant)
