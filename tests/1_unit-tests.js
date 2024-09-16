@@ -344,7 +344,7 @@ suite("Unit Tests", () => {
           "Mangoes are my favorite fruit.",
           "american-to-british"
         ),
-        "Mangoes are my <span class='highlight'>favourite</span> fruit."
+        'Mangoes are my <span class="highlight">favourite</span> fruit.'
       );
     });
     test("yogurt", () => {
@@ -353,7 +353,7 @@ suite("Unit Tests", () => {
           "I ate yogurt for breakfast.",
           "american-to-british"
         ),
-        "I ate <span class='highlight'>yoghurt</span> for breakfast."
+        'I ate <span class="highlight">yoghurt</span> for breakfast.'
       );
     });
     test("footie", () => {
@@ -362,7 +362,7 @@ suite("Unit Tests", () => {
           "We watched the footie match for a while.",
           "british-to-american"
         ),
-        "We watched the <span class='highlight'>soccer</span> match for a while."
+        'We watched the <span class="highlight">soccer</span> match for a while.'
       );
     });
     test("Paracetamol", () => {
@@ -371,7 +371,7 @@ suite("Unit Tests", () => {
           "Paracetamol takes up to an hour to work.",
           "british-to-american"
         ),
-        "<span class='highlight'>Tylenol</span> takes up to an hour to work."
+        '<span class="highlight">Tylenol</span> takes up to an hour to work.'
       );
     });
   });

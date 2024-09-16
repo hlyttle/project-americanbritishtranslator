@@ -33,7 +33,7 @@ class Translator {
         let endPoint = startPoint + word.length;
         translatedSentence =
           translatedSentence.slice(0, startPoint) +
-          "<span class='highlight'>" +
+          '<span class="highlight">' +
           objectToCheck[word] +
           "</span>" +
           translatedSentence.slice(endPoint);
@@ -50,7 +50,7 @@ class Translator {
         let endPoint = startPoint + word.length;
         translatedSentence =
           translatedSentence.slice(0, startPoint) +
-          "<span class='highlight'>" +
+          '<span class="highlight">' +
           titlesObject[word][0].toUpperCase() +
           titlesObject[word].slice(1) +
           "</span>" +
@@ -69,7 +69,7 @@ class Translator {
           : timeToChange[0].replace(".", ":");
       translatedSentence = translatedSentence.replace(
         timeToChange[0],
-        "<span class='highlight'>" + newTime + "</span>"
+        '<span class="highlight">' + newTime + "</span>"
       );
     }
     if (translatedSentence[0] === "<") {

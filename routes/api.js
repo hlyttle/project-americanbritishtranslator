@@ -37,6 +37,3 @@ module.exports = function (app) {
     }
   });
 };
-
-// If one or more of the required fields is missing, return { error: 'Required field(s) missing' }.
-// If text is empty, return { error: 'No text to translate' }

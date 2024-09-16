@@ -23,7 +23,7 @@ suite("Functional Tests", () => {
           assert.deepEqual(res.body, {
             text: "Let's go to the swap meet with Mrs. Smith at 2:30.",
             translation:
-              "Let's go to the <span class='highlight'>car boot sale</span> with <span class='highlight'>Mrs</span> Smith at <span class='highlight'>2.30</span>.",
+              'Let\'s go to the <span class="highlight">car boot sale</span> with <span class="highlight">Mrs</span> Smith at <span class="highlight">2.30</span>.',
           });
           done();
         });
@@ -42,7 +42,7 @@ suite("Functional Tests", () => {
           assert.deepEqual(res.body, {
             text: "Boiled sweets are my favourites!",
             translation:
-              "<span class='highlight'>Hard candies</span> are my <span class='highlight'>favorites</span>!",
+              '<span class="highlight">Hard candies</span> are my <span class="highlight">favorites</span>!',
           });
           done();
         });
